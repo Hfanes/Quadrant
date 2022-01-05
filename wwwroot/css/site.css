@@ -1,0 +1,124 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+
+/* "Logo only" */
+a {
+    color: #fff;
+
+}
+    a:hover {
+        color: #6495ED;
+        text-decoration: none;
+    }
+
+.logo {
+    color: #6495ED;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.btn-primary {
+    background: #6495ED;
+    border-radius: 999px;
+    box-sizing: border-box;
+    border: solid;
+    color: #010101;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+}
+    .btn-primary:hover {
+        background: #1A1A1D;
+        border-color: #6495ED;
+        border: solid;
+    }
+
+    body {
+        /* Margin bottom by footer height */
+        margin-bottom: 60px;
+        background-color: #1A1A1D;
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        overflow-x: hidden;
+    }
+
+
+/*navbar style*/
+nav {
+    background-color: transparent;
+    
+}
+.loginregister {
+    margin-right: -250px;
+}
+.loginON {
+    /*margin-right: -250px;*/
+}
+
+@media (max-width: 1050px) {
+    .loginregister {
+        margin-right: auto;
+    }
+}
+
+
+ul {
+    padding: 0;
+    width: 30vw;
+    list-style: none;
+    background: transparent;
+}
+
+    ul li {
+        display: inline-block;
+        position: relative;
+        line-height: 21px;
+        text-align: left;
+    }
+
+        ul li a {
+            display: block;
+            padding: 8px 25px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+
+            ul li a:hover {
+                color: #6495ED;
+                text-decoration: none;
+            }
+
+        ul li ul.dropdown {
+            min-width: 100%; /* Set width of the dropdown */
+            background: #1A1A1D;
+            display: none;
+            position: absolute;
+            z-index: 999;
+            left: 0;
+            width: 15vw;
+        }
+
+ul li:hover ul.dropdown {
+    display: block; /* Display the dropdown */
+}
+
+ul li ul.dropdown li {
+    display: block;
+}
+
+
+
+
+
+
+
+

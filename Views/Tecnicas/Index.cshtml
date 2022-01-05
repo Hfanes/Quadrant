@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ProjetoDeSia.Models.Tecnica>
+@using Microsoft.AspNetCore.Http;
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/List.css" />
+    <script src="https://kit.fontawesome.com/acbfd12cfe.js" crossorigin="anonymous"></script>
+</head>
+
+
+@{
+    ViewData["Title"] = "As Minhas Técnicas";
+}
+
+
+@if (Context.Session.GetString("Utilizador") != null)
+{
+    <h1>Minhas Tecnicas</h1>
+
+    <p>
+        <button class="button">
+             <a asp-action="Create">Create New</a>
+        </button>
+    </p>
+
+    <table class="container">
+        <thead>
+            <tr>
+                <th>
+                    <h1>
+                    @Html.DisplayNameFor(model => model.Nome)
+                    </h1>
+                </th>
+                <th>
+                    <h1>
+                    @Html.DisplayNameFor(model => model.Descricao)
+                    </h1>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                @if (@item.Utilizador.IdUtilizador.ToString() == @Context.Session.GetString("UtilizadorId"))
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descricao)
+                        </td>
+                        <td class="icons">
+                            <a asp-action="EntrarTecnica" asp-route-id="@item.IdTecnica"><i class="fas fa-external-link-alt"></i></a> |
+                            <a asp-action="Edit" asp-route-id="@item.IdTecnica"><i class="fas fa-edit"></i> </a> |
+                            <a asp-action="Delete" asp-route-id="@item.IdTecnica"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h1>Erro!!</h1>
+    <h1>Voce não tem autorização para aceder a esta página</h1>
+}
+

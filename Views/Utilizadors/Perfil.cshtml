@@ -1,0 +1,20 @@
+﻿@model Utilizador
+@using Microsoft.AspNetCore.Http;
+
+@{
+    ViewData["Title"] = "Perfil";
+}
+
+<h1>Perfil</h1>
+
+@if (Model.IdUtilizador.ToString() == Context.Session.GetString("UtilizadorId"))
+{
+
+}
+else
+{
+    <h1>Erro!!</h1>
+    <h1>Voce não tem autorização para aceder a esta página</h1>
+}
+
+

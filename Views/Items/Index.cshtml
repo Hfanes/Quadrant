@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ProjetoDeSia.Models.Item>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/List.css" />
+</head>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pontucao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Importancia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.classificacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tecnica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuadId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pontucao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Importancia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.classificacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tecnica.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuadId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdItem">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdItem">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdItem">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
